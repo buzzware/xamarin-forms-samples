@@ -26,7 +26,13 @@
     </ResourceDictionary>
   </ContentPage.Resources>
 
-  <ListView ItemsSource="{x:Static local:NamedColor.All}"
+  <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+  
+  <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+  	<Button Clicked="Handle_Clicked" Text="Set ItemsSource" HeightRequest="40"/>
+  </StackLayout>
+
+  <ListView ItemsSource="{Binding ListViewItems}"
             RowHeight="{StaticResource rowHeight}">
     <ListView.ItemTemplate>
       <DataTemplate>
@@ -68,4 +74,5 @@
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>
+  </StackLayout>
 </ContentPage>
